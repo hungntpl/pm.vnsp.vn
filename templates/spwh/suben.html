@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  resize: vertical;
+  font-size:24px;
+  font-weight: bold;
+}
+
+input[type=number] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  resize: vertical;
+  font-size:24px;
+  font-weight: bold;
+}
+
+input[type=submit] {
+  height: 50px;
+  width: 100%;
+  font-size:24px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 5px;
+}
+
+.button {
+  height: 50px;
+  width: 100%;
+  font-size:24px;
+  background-color: #04AA6D;
+  color: white;
+  padding: 5px 5px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- <h3>Contact Form</h3> -->
+
+<div class="container">
+  <!-- <form action="/action_page.php" method="post"> -->
+  <form method="post">
+
+    {% csrf_token %}
+    
+    {{ form.as_p }} 
+    <!-- <label for="fname">First Name</label>
+    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+    <label for="lname">Last Name</label>
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.."> -->
+
+    <!-- <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select> -->
+    <!-- <input type="text" value="{{ spid }}" readonly /> -->
+    <!-- <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>  -->
+    
+    
+    <input type="submit" value="OK - Xuất kho"> <br> <br> 
+    <a href="http://pm.vnsp.vn/spwh/sparepart/scan/" class="button">Back</a> 
+    <!-- <button class="button is-success is-fullwidth is-medium mt-5" type="submit">OK</button> -->
+  </form>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  {% load static %}
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Nguyen The Hung">
+  <title>Spare Part QR</title>
+
+  <!-- <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic"> -->
+  <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="{% static 'spwh/tag/scan/css/setfont.css' %}">
+  <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="{% static 'spwh/tag/scan/css/normalize.css' %}">
+  <link rel="stylesheet" rel="preload" as="style" onload="this.rel='stylesheet';this.onload=null" href="{% static 'spwh/tag/scan/css/milligram.min.css' %}">
+  <!-- <link rel="stylesheet" type="text/css" href="{% static 'card/scan/css/style.css' %}"> -->
+</head>
+
+<body>
+
+  <main class="wrapper" >
+
+    <section class="container" id="demo-content">
+      <!-- <h1 class="title">Scan QR Code from Smartphone</h1> -->
+
+      <!-- <p>
+        <a class="button-small button-outline" href="../../index.html">HOME 🏡</a>
+      </p>
+
+      <p>This example shows how to scan a QR code with ZXing javascript library from the device video camera. If more
+        than one video input devices are available (for example front and back camera) the example shows how to read
+        them and use a select to change the input device.</p> -->
+
+      
+
+      <div>
+        <video id="video" width= 100% height="400" style="border: 1px solid gray"></video>
+      </div>
+
+      <div id="sourceSelectPanel" style="display:none">
+        <!-- <label for="sourceSelect">Chọn camera:</label> -->
+        <select id="sourceSelect" style="max-width:100%"></select>
+      </div>
+
+      <div>
+        <a class="button" id="startButton">Bấm vào để quét mã QR</a> 
+        <a class="button" id="resetButton">Reset</a>
+      </div>
+
+      <script>
+        function goToPage(e) {
+        let url="spwh/sparepart/sbexnote/"+e.target.value;  
+        console.log(url);
+        window.location = url;
+        }
+      </script>
+
+      <br>
+      <br>
+      
+
+      <form method="POST">
+        {% csrf_token %}
+        <label>Nhập mã thủ công</label>
+        <input type="text" id="pk" name="pk" >
+        <input type="submit" value="Chấp nhận mã thủ công">
+        
+      </form>
+
+     
+      <!-- <div style="display: table">
+        <label for="decoding-style"> Decoding Style:</label>
+        <select id="decoding-style" size="1">
+          <option value="once">Decode once</option>
+          <option value="continuously">Decode continuously</option>
+        </select>
+      </div> -->
+
+      <label>Result:</label>
+      <pre><code id="result"></code></pre>
+
+      <!-- <p>See the <a href="https://github.com/zxing-js/library/tree/master/docs/examples/qr-camera/">source code</a> for
+        this example.</p> -->
+    </section>
+
+    <!-- <footer class="footer">
+      <section class="container">
+        <p>ZXing TypeScript Demo. Licensed under the <a target="_blank"
+            href="https://github.com/zxing-js/library#license" title="MIT">MIT</a>.</p>
+      </section>
+    </footer> -->
+
+  </main>
+  
+  <script type="text/javascript" src="{% static 'spwh/tag/scan/js/index.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'spwh/tag/scan/js/decode.event.js' %}"></script>
+
+  
+
+  
+</body>
+
+</html>

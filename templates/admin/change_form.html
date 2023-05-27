@@ -1,0 +1,45 @@
+{% extends "admin/change_form.html" %}
+
+{% block content %}
+    {{ block.super }}
+    
+
+
+{% endblock %}
+
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+
+    {% if '/safety/patrolreg/' in request.path %}
+
+    <div class="submit-row" >
+            <input type="submit" value="Save & Remind" name="_make-unique">
+    </div>
+
+    {% endif %}
+
+    
+    
+
+    {% if '/spwh/sparepart/' in request.path %}
+
+    <div class="submit-row">
+        <input type="button" value="print barcode" onclick="document.location='/spwh/sparepart/{{ object_id }}/printqr/'" />
+        <!-- <button onclick="window.location.href='{{ request.get_host }}/wage/wn/print/{{ object_id }}/'">in thông báo lương</button> -->
+    </div>
+
+    {% endif %}
+
+    {% load static %}
+    
+    
+
+{% endblock %}
+
+
+{% comment %}
+
+
+
+{% endcomment %}

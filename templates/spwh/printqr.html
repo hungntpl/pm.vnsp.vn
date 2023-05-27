@@ -1,0 +1,23 @@
+{% load static %}
+{% load qr_code %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'spwh/printqr/style.css' %}">
+
+     <div class="noprint">
+        <button class="button" onclick="window.print()" >Print</button>
+        <a href="http://pm.vnsp.vn/admin/spwh/sparepart/" class="button">Back</a> 
+    </div>
+    <h3> {{ sparepart.spid }} - {{ sparepart.vname }} - {{ sparepart.ename }} - {{ sparepart.spec }}</h3>
+    
+    {% qr_from_text sparepart.spid size="T" %}
+
+    {% qr_from_text sparepart.spid size="S" %}
+
+    {% qr_from_text sparepart.spid size="M" %}
+
+    {% qr_from_text sparepart.spid size="L" %}
+
+    
+
+{% endblock %}
