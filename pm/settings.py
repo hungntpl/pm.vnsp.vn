@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'pm.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pm',
-        'USER': 'pm',
-        'PASSWORD': 'Vnsp$2019',
-        'HOST': 'localhost',
+        'NAME': '*****',
+        'USER': '*****',
+        'PASSWORD': '******',
+        'HOST': '******',
         'PORT': '',
     }
 }
